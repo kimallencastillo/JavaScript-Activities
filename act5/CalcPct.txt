@@ -1,0 +1,11 @@
+function per(pre,mid,fin){
+    /*var pre = Number(document.Grade.pre.value);
+    var mid = Number(document.Grade.mid.value);
+    var final = Number(document.Grade.final.value);*/   
+    var perCalc;
+    var rem;
+    
+    perCalc = (pre * 0.2) + (mid * 0.3) + (fin * 0.5);
+
+    return perCalc;
+}

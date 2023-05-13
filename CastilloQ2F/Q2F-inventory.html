@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SM Online</title>
+  </head>
+  <script src="Castillo.js"></script>
+  <style>
+    table ,tr, td{
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+  </style>
+  <body onsubmit="return false">
+    <form name="smCalc">
+    <table align="center" onblur="upd()">
+      <tr>
+        <td>Item Code</td>
+        <td>Item Description</td>
+        <td>Price</td>
+        <td>Qty On-Hand</td>
+
+      </tr>
+      <tr>
+        <td><input type="text" value="100" name="codeN" readonly></td>
+        <td><input type="text" value="Samsung DVD"  name=itemDesc readonly></td>
+        <td><input type="text" value="50,000" name=uptPrice readonly></td>
+        <td><input type="text" value="4" name="onHand0" readonly></td>
+      </tr>
+      <tr>
+        <td><input type="text" value="101" name="codeN" readonly></td>
+        <td><input type="text" value="Samsung Washing Machine" name=itemDesc readonly></td>
+        <td><input type="text" value="60,000" name=uptPrice readonly></td>
+        <td><input type="text" value="5" name="onHand1" readonly></td>
+      </tr>
+      <tr>
+        <td><input type="text" value="102" name="codeN" readonly></td>
+        <td><input type="text" value="Huawei Mobile Phone" name=itemDesc readonly></td>
+        <td><input type="text" value="27,000" name=uptPrice readonly></td>
+        <td><input type="text" value="5" name="onHand2" readonly></td>
+      </tr>
+      <tr>
+        <td><input type="text" value="103" name=codeN readonly></td>
+        <td><input type="text" value="HP Printer with Scanner" name=itemDesc readonly></td>
+        <td><input type="text" value="35,000" name=uptPrice readonly></td>
+        <td><input type="text" value="5" name="onHand3" readonly></td>
+      </tr>
+      <tr>
+        <td><input type="text" value="104" name=codeN readonly></td>
+        <td><input type="text" value="Sanyo Electric Fan" name=itemDesc readonly></td>
+        <td><input type="text" value="2,500" name=uptPrice readonly></td>
+        <td><input type="text" value="5" name=onHand4 readonly></td>
+      </tr>
+    </table>
+    <button onclick="upd()">Update</button>
+  </form>
+  </body>
+</html>

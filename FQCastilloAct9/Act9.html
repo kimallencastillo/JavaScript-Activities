@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Miss Asia Beauty and Talent Competition</title>
+  </head>
+  <link rel="icon" href=https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Miss_Universe_logo.svg/1200px-Miss_Universe_logo.svg.png>
+  <script src="Act9.js"></script>
+  <style>
+      body{
+          background-color:skyblue;
+      }
+    table{
+        border-spacing: 15px;
+    }
+    .tb2 {
+        border: 1px solid black;
+    }
+    .sv{
+        float: right;
+    }
+    .btn{
+        color: black;
+        background-color: crimson;
+    }
+    .sv{
+        color: black;
+        background-color: crimson;
+    }
+    .t2{
+        text-align: center;
+        font-weight: bold;
+    }
+    .win{
+        text-align: center;
+    }
+    
+  </style>
+  <body onkeydown="myFunction(event)"> 
+      <form name="constForm" onsubmit="return false"> 
+        
+          <table class="tb1" align="center">
+              <tr>
+                  <td colspan="5" style="text-align: center; font-size: 18px; font-weight: bold;">Miss Asia Beauty and Talent Competition 2021</td>
+              </tr>
+              <tr>
+                <td colspan="5" style="text-align: center; font-style: italic;">Scoring and Processing Program</td>
+            </tr>
+            <tr>
+                <hr>
+            </tr>
+            <tr>
+                <td><br><br></td>
+            </tr>
+            <!--Input value-->
+            <tr>
+                <td>Contestant No.</td>
+                <td align="left"><select name="es" onblur="loadInfo()">
+                    <option value="">--Select Number--
+                    <option value="C1">C1
+                    <option value="C2">C2
+                    <option value="C3">C3
+                    <option value="C4">C4
+                </select></td>
+            </tr>
+            <tr>
+                <td>Contestant Name</td>
+                <td align="left"><input type="text" name="constName" id=cName min="40" max="100" readonly></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td align="left"><input type="text number" name="country" readonly></td>
+            </tr>
+            <tr>
+                <td>Score in Q & A </td>
+                <td align="left"><input type="text number" name="srQnA" onmouseout="disMsg()"  id=tempQnA></td>
+            </tr>
+            <tr>
+                <td>Score in Gown</td>
+                <td align="left"><input type="text number" name="srGown" onmouseout="disMsg()"  id=tempGown></td>
+            </tr>
+            <tr>
+                <td>Score in Popularity</td>
+                <td align="left"><input type="text number" name="srPop" onmouseout="disMsg()"  id=tempPop></td>
+            </tr>
+            <tr>
+                <td>Score in Swimsuit</td>
+                <td align="left"><input type="text" name="srSuit" onmouseout="disMsg()" id="tempSuit"></td>
+            </tr>
+            <tr>
+                <td>Computation Mode</td>
+                <td><input type="radio" name="mode" value="A" checked>Average
+                    <input type="radio" name="mode" value="P">Percentage 
+                </td>
+            </tr>
+            <tr>
+                <td>Overall Score</td>
+                <td><input type="text number" name="overSr"> </td>
+            </tr>
+            <tr>
+                <td><button name="btn" class="btn" onclick="compute()">Compute</button></td>
+                <td><button name="sv" class="sv" onclick="saveFile()">Move </button></td>
+            </tr>
+            
+          </table>
+          <table align=center>
+            <tr>
+                <td >
+                    <p id = textDisplay>Press F8 to save, F10 to restore, or F9 to clear</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center; font-weight: 900; font-size: 20px;">Score Tabulation</td>
+               </tr>
+          </table>
+          <table class=tb2 align="center">
+              
+                 <tr class="t2">
+                     <td>Candidate Name</td>          
+                     <td>Overall</td>
+                 </tr>
+                 <tr>
+                     <td>1.
+                     <input type="text" name="name1" id=n1></td>
+                     <td><input type="text number" name="score1" id=s1 >
+                    </td>
+                 <tr>
+                 <tr>
+                     <td>2.
+                        <input type="text" name="name2" id="n2">
+                    </td>
+                    <td>
+                        <input type="text" name="score2" id="s2">
+                    </td>
+                 </tr>
+                     <td>3.
+                        <input type="text" name="name3" id="n3">
+                    </td>
+                    <td>
+                        <input type="text" name="score3" id="s3">
+                     </td>
+                 <tr>
+                       <td>4.
+                        <input type="text" name="name4" id="n4"></td>
+                        <td><input type="text" name="score4" id="s4">
+                       </td>                   
+                 </tr>
+                 <tr>
+                     <td><input type="button" value="Calculate" class="btn" onclick="winner()"></td>
+                    <td> <input type="button" value="New" names="btn-clr" id="reset" class="btn" onclick="newConst()" style="float: right;"></td>
+                </tr>
+                
+          </table>
+          <br>
+          <table width=400 align="center" style="border: 1px solid black;">
+              <tr ><td style="border: 1px solid black;" >
+                  <p id="winner" class="win"> </p>
+              </td></tr>
+              
+          </table>
+      
+      </form>
+  
+  </body>
+</html>

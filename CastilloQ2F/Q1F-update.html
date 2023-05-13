@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SM Online</title>
+  </head>
+  <script src="Castillo.js"></script>
+  <style>
+    table{
+      width: 50%;
+    }
+    .t1{
+      text-align: center;
+    }
+  
+   
+  </style>
+  <body onsubmit="return false">
+    <form name="updateInv">    <div class="t">
+    <table align="center"><tr><th>Update Inventory</th></tr></table>
+  </div>
+  <br>
+    <table align="center">
+    
+      <tr>
+        <td class="t1">Item Code</td>
+        <td class="t1">Description</td>
+        <td >Current Qty On-Hand</td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><input type="text" size=6 name="itemC" onblur="loadInfo()"></td>
+        <td style="text-align: center;"><input type="text" size=15 name=desOt readonly></td>
+        <td ><input type="text" size="8" name="qtyOt" readonly></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><button onclick="loadInfo()">Load Item</button></td>
+        <td style="text-align: right  ;">Transaction Type [ R/S ]</td>
+        <td><input type="text" size="8" name=transType  ></td>
+      </tr>
+      <tr>
+        <td style="text-align: center;"><button onclick="calc()">Compute</button></td>
+        <td style="text-align: right;">Quantity</td>
+        <td><input type="text" size="8" name="quan" onblur = checkQty()></td>
+      
+      </tr>
+      <tr>
+        <td></td>
+        <td style="text-align: right;">Updated Qty On-Hand</td>
+        <td><input type="text" name="updQty" size="8" readonly></td>
+      </tr>
+    </table>
+  </form>
+
+  </body>
+</html>

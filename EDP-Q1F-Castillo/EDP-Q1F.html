@@ -1,0 +1,158 @@
+<html>
+<head>
+<title>BPI Online Banking</title>
+</head>
+<style>
+    input {
+		width:80px;
+		text-align:center;
+	}
+	#aName {
+	    width:200px;
+		text-align:left;
+		font-style:italic;
+	}
+	#cmd {
+		width:150px;
+		background-color: maroon;
+		color: white;
+	}
+</style>	
+<script>
+	function load() {
+	   var listAccts = ["A-1000","A-1001","A-1002","A-1003"]
+	   var listNames = ["SM Corporation","Seven Corporation","Manny Pacquiao",
+				   "Rodrigo Duterte"]
+	   var listBal = [50000,65000,100000,90000]
+	   var acct = document.tranFrm.acct.value
+	   var ptr;
+	   for (ptr = 0; ptr < 5; ptr++) {
+	       if (acct == listAccts[ptr])
+				break;
+	   }
+	   if ( ptr < 5) {
+			document.tranFrm.aName.value = listNames[ptr]
+			document.tranFrm.bal.value = listBal[ptr]
+			document.tranFrm.ttype.focus()			
+	   }
+	   else 
+			alert("Invalid Account Number !")
+	}
+	function checkType() {
+		var ttype = document.tranFrm.ttype.value
+		if (ttype != 'W' && ttype != 'D') {
+			alert("Please enter either 'D' or 'W'")
+			document.tranFrm.acct.focus()
+			return
+		}
+	}
+	function checkAmt() {
+		var amt = Number(document.tranFrm.amt.value)
+		if (amt <= 0 ) {
+			alert("Amount must be greater than 0")
+			document.tranFrm.ttype.focus()
+			return
+		}
+		if (isNaN(amt)) {
+			alert("Amount must be a number")
+			document.tranFrm.ttype.focus()
+			return
+		}
+		compute()	
+	}
+	function compute() {
+		var bal = Number(document.tranFrm.bal.value)
+		var ttype = Number(document.tranFrm.ttype.value)
+		var amt = Number(document.tranFrm.amt.value)
+		var nBal = bal
+		if (ttype == 'D')
+			nBal += amt
+		else {
+			if (bal < amt)  {
+				alert("Insufficient balance")
+				document.tranFrm.ttype.focus()
+				return
+			}
+			else {
+				nBal -= amt
+			}
+		}
+		document.tranFrm.nBal.value = nBal
+		document.tranFrm.updBtn.focus()
+	}
+	function update() {
+		var beg = Number(document.tranFrm.beg.value)
+		var noWith = Number(document.tranFrm.noWith.value)
+		var amtWith = Number(document.tranFrm.amtWith.value)
+		var noDep = Number(document.tranFrm.noDep.value)
+		var amtDep = Number(document.tranFrm.amtDep.value)
+		var curr = Number(document.tranFrm.curr.value)
+		var ttype = document.tranFrm.ttype.value
+		var amt = Number(document.tranFrm.amt.value)
+		if (ttype == 'D') {
+			noDep++
+			amtDep += amt
+			curr+=amt
+		}
+		else if (ttype == 'W') {
+			noWith++
+			amtWith += amt
+			curr-=amt
+		}
+		document.tranFrm.noWith.value = noWith
+		document.tranFrm.amtWith.value = amtWith
+		document.tranFrm.noDep.value = noDep
+		document.tranFrm.amtDep.value = amtDep
+		document.tranFrm.curr.value = curr 
+		document.tranFrm.ttype.value = ""
+		document.tranFrm.amt.value = 0
+		document.tranFrm.bal.value = 0
+		document.tranFrm.nBal.value = 0
+		document.tranFrm.aName.value = ""
+		document.tranFrm.acct.value = ""
+		document.tranFrm.acct.value.focus()
+	}
+</script>	
+<body>
+    <br>
+	<br>
+	<form name = tranFrm>
+	<table width = 100%>
+		<tr><td width = 10%><img src = bpi.png height = 100px weight = 100px>
+		    <td valign = middle><p>Bank of Philippine Islands</p>
+	</table>
+    <table width = 60% align = center cellspacing = 5>
+		<tr><td colspan = 6>Bank Transaction
+		<tr>
+			<th>Account No.
+			<th>Name
+			<th>Balance
+			<th>Transaction
+			<th>Amount
+			<th>New Balance
+		<tr>	
+		<tr><th><input type = text name = acct onBlur = load()>
+			<th><input id = aName type = text name = aName readonly>
+			<th><input type = text name = bal readonly>
+			<th><input type = text name = ttype onBlur = checkType()>
+			<th><input type = text name = amt onBlur = checkAmt()>
+			<th><input type = text name = nBal readonly>
+			<tr><th colspan = 4>
+				<th colspan = 2>Summary
+		<tr><td align = right colspan = 5>Cash on Bank ( Beginning)
+			<th><input type = text name = beg value = 10000 readonly>
+		<tr><td align = right colspan = 5>Total No. of Withdrawals
+			<th><input type = text name = noWith readonly>
+		<tr><td align = right colspan = 5>Amount
+			<th><input type = text name = amtWith readonly>
+		<tr><td align = right colspan = 5>Total No. of Deposits
+			<th><input type = text name = noDep readonly>
+		<tr><th align = right colspan = 5>Amount
+			<th><input type = text name = amtDep readonly>
+		<tr><th align = right colspan = 5>Cash on Bank ( Current)
+			<th><input type = text name = curr value = 10000 readonly>
+		<tr><td colspan = 6><input id = cmd type = button value = "Update Summary" name = updBtn onclick = update()>
+	</table>
+	</form>
+</body>
+</html>

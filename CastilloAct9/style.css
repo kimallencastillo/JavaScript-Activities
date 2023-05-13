@@ -1,0 +1,27 @@
+body{
+    background-color: EECC08;
+}
+
+.tb1, a{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-family: Comic Sans MS;
+    font-size: 20px;  
+}
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.nav{
+    list-style: none;
+    color: black;
+    display: inline;
+    text-decoration: none;
+    
+}
+.nav a {
+   
+    text-decoration: none;
+  }

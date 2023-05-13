@@ -1,0 +1,54 @@
+	.title1 {
+		margin-left: 30%;
+		background-color: orange;
+		color:black;
+		text-align: center;
+		font-family: "Arial Rounded MT Bold";
+		font-size: 18px;
+		width:40%;
+	}
+	.title2 {
+		text-align: center;
+		font-family: "Calibri";
+		font-size: 14px;
+		text-decoration: underline;
+	}
+	.title3 {
+		background-color: yellow;
+		border-width: 1px;
+		width:94%;
+		border-style: solid;
+		text-align: center;
+	}
+	.loadbtn {
+		width : 80px;
+		background-color: maroon;
+		text-align: center;
+		color: white;
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	.labels {
+	    text-align: right;
+	}
+	.inputs {
+		 width:60px;
+	     text-align: center;
+	     background-color: blue;
+	     color: white;
+	}
+	
+	.link {
+		width : 80px;
+		text-align:center;
+		background-color: maroon;
+		text-align: center;
+		color: white;
+		padding-top: 2px;
+		height: 20px;
+		margin-right: 23px;
+		margin-top: 15px;
+	}
+	table, tr, td{
+		border: 1px solid black;
+	}

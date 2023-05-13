@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>Grade Calc</title>
+<style>
+	body{
+		background-color: wheat;
+	}
+  .in {
+     width: 50px;
+	 text-align: center;
+  }
+  .tb-1{
+	  border: 2px solid black;
+  }
+  .out1 {
+     width: 50px;
+	 text-align: center;
+	 font-weight: bold;
+  }
+  .out2 {
+     width: 70px;
+	 text-align: left;
+	 font-style: italic;
+  }
+  p {
+	 color: white;
+	 background-color: blue;
+	 font-style: italic;
+	 border-style: solid;
+	 text-align:center;
+  }
+  .t-1{
+	  background-color: grey;
+  }
+  .btn-1{
+	  background-color:tomato;
+	  color: white;
+  }
+</style>
+<script language="Javascript">
+	
+   function check(event) {
+     var key = event.key;
+     if (key == "F9") print1()
+	 else if(key == "Ctrl" + "P" ) print_window()
+   }
+
+   function print_window() {
+     alert("Printing Report Card")
+	 
+
+	 var printWindow = window.open('', 'PRINT', 'Height=500, width =700');
+	 printWindow.document.write('<html><head><title>' + document.title + '</title');
+	 document.write('</head><body>');
+	document('<p>Name: ' + document.getElementById('sname').innerHTML + '</p>');
+		
+	window.print();
+	window.close();
+
+   }
+
+   function displayMess(sw) {
+       var mess = "";
+       switch (sw ) {
+	      case 1 :  mess = "Enter on C1, C2, C3, or C4"; break;
+		  case 2 :  mess = "Enter a grade between 40 to 100 only"; break;
+		  default:  mess = "Press F9 to print Report Card"; break;
+	   }
+	   document.getElementById('mess').innerHTML = mess;
+   }
+
+   function dispInfo() {
+       var code = document.getElementById('code').value;
+	   var name, course;
+	   switch ( code ) {
+	      case "C1" :  name = "Manny Pacquiao";
+		               course = "BS IT";break;
+		  case "C2" :  name = "Manny Villar";
+		               course = "BS HRM";break;
+		  case "C3" :  name = "Cynthia Villar";
+		               course = "BS ACCT";break;
+	   }
+	   document.getElementById('sname').value = name
+	   document.getElementById('crs').value = course
+   }
+   function calc() {
+       var pg = Number(document.getElementById('pg').value);
+	   var mg = Number(document.getElementById('mg').value);
+	   var fg = Number(document.getElementById('fg').value);
+	   var overall = pg * .2 + mg * .3 + fg * .5;
+	   var rem;
+	   if (overall < 75 ) rem = "Failed";
+	   else rem = "Passed";
+	   document.getElementById('overall').value = overall;
+	   document.getElementById('rem').value = rem;
+   }
+   
+</script> 	
+</head>
+<body onkeydown= check(event) >
+	<h3 align = center>Online Grade Calculator</p>
+	
+	<h4 align = center>A Client-Server Application</p>
+	
+	<table align = center width = 35% cellspacing = 5px class="tb-1">
+		
+		<tr>
+			<td width = 60% align = right>Student No.:  
+			<td width = 40% ><input class = in  type = text id = code onMouseOut = displayMess(0) onMouseOver = displayMess(1) onblur = dispInfo()>
+		</td>
+		</tr>
+		
+			<tr><td align = right>Student Name: 
+			<td><input id = sname type = text style = 'width:145px;text-align:center' readonly>
+		
+			<tr><td align = right>Course: 
+			<td><input id = crs type = text style = 'width:65px' readonly>
+    	
+				<tr ><th colspan = 2 >Grade Per Term</p>			
+		
+			<tr><td align = right>Prelim:  <td><input  id = pg class = in type = text onMouseOut = displayMess(0) onMouseOver = displayMess(2) onchange = calc()>
+		
+			<tr><td align = right>Midterm:  <td><input id = mg class = in type = text onMouseOut = displayMess(0) onMouseOver = displayMess(2) onchange = calc()>
+		
+			<tr><td align = right>Finals:  <td><input  id = fg class = in type = text onMouseOut = displayMess(0) onMouseOver = displayMess(2) onchange = calc()>
+		
+			<tr><td align = right>Overall Grade:  <td><input id = overall class = out1 type = text readonly>
+		
+			<tr><td align = right>Remarks:  <td><input id = rem class = out2 type = text readonly>
+			
+    </table>
+	<table align = center width = 36%>
+		
+		<tr><td><button onclick="window.print_window()" class="btn-1 noPrint">Print</button></td></tr>
+		<tr><td><br></td></tr>
+	    <tr><td><p id = mess>Press F9 to Print Report Card</p></td></tr>
+	</table>
+</body>
+</html>
+						

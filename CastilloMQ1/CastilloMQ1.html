@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Miss Asia Beauty and Talent Competition</title>
+  </head>
+  <script src="MQ1.js"></script>
+  <style>
+      body{
+          background-color:skyblue;
+      }
+    table {
+        border-spacing: 15px;
+    }
+  </style>
+  <body> 
+      <form name="constForm" onsubmit="return false"> 
+          <table align="center">
+              <tr>
+                  <td colspan="5">Miss Asia Beauty and Talent Competition 2021</td>
+              </tr>
+              <tr>
+                <td colspan="5">Scoring and Processing Program</td>
+            </tr>
+            <tr>
+                <td><br><br></td>
+            </tr>
+            <!--Input value-->
+            <tr>
+                <td>Contestant No.</td>
+                <td align="left"><select name="es" onblur="loadInfo()">
+                    <option value="">--Select Number--
+                    <option value="C1">C1
+                    <option value="C2">C2
+                    <option value="C3">C3
+                    <option value="C4">C4
+                </select></td>
+            </tr>
+            <tr>
+                <td>Contestant Name</td>
+                <td align="left"><input type="text" name="constName" id=cName min="40" max="100" readonly></td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td align="left"><input type="text number" name="country" readonly></td>
+            </tr>
+            <tr>
+                <td>Score in Q & A </td>
+                <td align="left"><input type="text number" name="srQnA" id=qNa></td>
+            </tr>
+            <tr>
+                <td>Score in Gown</td>
+                <td align="left"><input type="text number" name="srGown" ></td>
+            </tr>
+            <tr>
+                <td>Score in Popularity</td>
+                <td align="left"><input type="text number" name="srPop" ></td>
+            </tr>
+            <tr>
+                <td>Score in Swimsuit</td>
+                <td align="left"><input type="text" name="srSuit"></td>
+            </tr>
+            <tr>
+                <td>Computation Mode</td>
+                <td><input type="radio" name="mode" value="A" checked>Average
+                    <input type="radio" name="mode" value="P">Percentage 
+                </td>
+            </tr>
+            <tr>
+                <td>Overall Score</td>
+                <td><input type="text number" name="overSr"> </td>
+            </tr>
+            <tr>
+                <td><button name="btn" onclick="compute()">Compute</button></td>
+                <td><button name="sv" onclick="saveFile()">Save</button></td>
+            </tr>
+          </table>
+          <table align="center">
+              <tr>
+                  <th> Score Tabulation</th>
+                 </tr>
+                 <tr >
+                     <td>Candidate Name</td>
+                     <td>Overall</td>
+                 </tr>
+                 <tr>
+                     <td>1
+                     <input type="text" name="name1" id=n1>
+                     <input type="text number" name="score1" id=s1 >
+                    </td>
+                 <tr>
+                 <tr>
+                     <td>2
+                        <input type="text" name="name2" id="n2">
+                        <input type="text" name="score2" id="s2">
+                     </td>
+                 </tr>
+                     <td>3
+                        <input type="text" name="name3" id="n3">
+                        <input type="text" name="score3" id="n3">
+                     </td>
+                 <tr>
+                       <td>4
+                        <input type="text" name="name4" id="n4">
+                        <input type="text" name="score4" id="n4">
+                       </td>                   
+                 </tr>
+                 <tr>
+                     <td> <input type="button" value="New" names="btn-clr" id="reset" onclick="newConst()"></td>
+                 </tr>
+          </table>
+      </form>
+  
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/2/2d/University_of_Perpetual_Help_System_DALTA_logo.png">
+    
+  </head>
+  
+
+  <style>
+      * {
+         box-sizing: border-box;
+    }
+    body{
+        background-color: #E2D9CA;
+    }
+   .col {
+    float: left;
+    width: 40%;
+    padding: 5px 15px 0px 295px;
+    }
+    .btn-1{
+        width: 100px;
+    }
+    .btn-2{
+        width: 50px;
+    }
+    #about{
+        color: black;
+    }
+
+  </style>
+  <body>
+      <script type="javascript">
+
+      </script>
+      <caption><b>MyGCalc</b></caption>
+      <hr>
+      <p align="center" style="font-size: 25px;">Online Grade Calculator </p>
+      <h4 align="center">ver  1.0</h4>
+      <br>
+
+      <form name="taxForm" >
+        <h4 align="center" style="color: #945055;">Student information<hr></h4>
+        <table class="table1" align="center"> 
+            <tr class="c1">
+                <td >Student No: </td>
+                <td ><input type="text number" size="10"></td>
+            </tr>
+            <tr class="c2">
+                <td>Student Name: </td>
+                <td><input type="text name"></td>
+            </tr>
+            <tr class="c3">
+                <td>Course</td>
+                <td>
+                    <input type="radio" value="I" name="pt"> BSIT
+                    <input type="radio" value="C" name="pt"> BSCS 
+                    <td>Year</td>
+                    <td><select name="es">
+                        <option value="">--Select Year </option>
+                        <option value="F">First Year</option> 
+                        <option value="S">Second Year</option>  
+                        <option value="T">Third Year</option> 
+                        <option value="F1">Fourth Year</option> 
+                    </select>
+                    </td>
+                </td> 
+            </tr>   
+           
+        </table>
+        <h4 align="center" style="color: #945055;">Scores For Prelim<hr></h4>
+        <div class="col">
+            <table >
+            <tr>
+            <th colspan="15" style="border: 1px solid black; color: #800000;">Quizzes</th>
+             </tr>
+                <tr>
+                    <td align="right" colspan="5">Quiz 1</td>
+                    <td align="right" ><input type="number" min="40" max="100"></td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="5">Quiz 2</td>
+                    <td><input type="number" min="40" max="100"></td>
+                </tr>
+                <tr>
+                    <td  align="right" colspan="5">Quiz 3</td>
+                    <td><input type="number" min="40" max="100"></td>
+                </tr>
+                <tr>
+                    <td align="right" colspan="5">Average</td>
+                    <td><input type="text number" size="5"></td>
+                </tr>
+                <tr>
+                    <th><br></th>
+                </tr>
+                <tr>
+                    <td  align="right" colspan="5">Recitation</td>
+                    <td><input type="number" min="40" max="100"></td>
+                </tr>
+                <tr>
+                    <td  align="right" colspan="5">Project</td>
+                    <td><input type="number" min="40" max="100"></td>
+                </tr>
+                <tr>
+                    <th colspan="15" style="border: 1px solid black; color: #800000;">Prelim Exam</th>
+                </tr>
+                <tr>
+                    <td  align="right" colspan="5">Raw Score</td>
+                    <td><input type="number" min="0" max="100" size="6"></td>
+                </tr>
+                <tr>
+                    <td  align="right" colspan="5">Max Score</td>
+                    <td><input type="number" min="0" max="100" size="6"></td>
+                </tr>
+                <tr>
+                    <th><br></th>
+                </tr>
+                <tr>
+                <td colspan="2" ><input type="button" value="Validate" class="btn-1" disabled></td>
+                <td colspan="5" align="right"> <input type="reset" value="Clear" class="btn-2"></td>
+              </tr>
+           
+        </table>
+    </div>
+
+    <!--3rd Table-->
+    <div class="col">
+        <table >
+        <tr>
+        <!--Activity    -->
+        <th colspan="15" style="border: 1px solid black; color: #800000;">Activities</th>
+         </tr>
+            <tr>
+                <td align="right" colspan="5">Act 1</td>
+                <td align="right" ><input type="number" min="40" max="100"></td>
+            </tr>
+            <tr>
+                <td align="right" colspan="5">Act 2</td>
+                <td><input type="number" min="40" max="100"></td>
+            </tr>
+            <tr>
+                <td  align="right" colspan="5">Act 3</td>
+                <td><input type="number" min="40" max="100"></td>
+            </tr>
+            <tr>
+                <td align="right" colspan="5">Average</td>
+                <td><input type="text number" size="5"></td>
+            </tr>
+            <tr>
+                <th><br></th>
+            </tr>
+            <!--Prelim Exam-->
+            <tr>
+                <th colspan="15" style="border: 1px solid black; color: #800000;">Prelim Grade</th>
+            </tr>
+            <tr>
+                <td  align="right" colspan="5">C.S. ( 60%)</td>
+                <td><input type="text number" size="5"></td>
+            </tr>
+            <tr>
+                <td  align="right" colspan="5">P.E. ( 40%)</td>
+                <td><input type="text number" size="5"></td>
+            </tr>
+            <tr>
+                <td  align="right" colspan="5">Grade</td>
+                <td><input type="text number" size="5"></td>
+            </tr>
+            <tr>
+                <td  align="right" colspan="5">Remark</td>
+                <td><input type="text number" size="5"></td>
+            </tr>
+            <tr>
+                <th><br></th>
+            </tr>
+            <tr>
+            <td colspan="2" ><input type="button" value="Compute" class="button" disabled   ></td>
+            <td colspan="5" align="right"><a href="CastilloAct3-About.html" id="about">About Me</td>
+          </tr>
+    </table>
+    </div>
+      </form>
+  </body>
+ <footer> <br><br><br></footer>
+</html>

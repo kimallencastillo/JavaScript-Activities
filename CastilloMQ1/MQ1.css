@@ -1,0 +1,52 @@
+body{
+    background-color: papayawhip;
+}
+table, tr, td{
+    width: 600px;
+    border: 1px solid black;
+
+}
+.load{
+    color: white;
+}
+.std{
+    background-color: blue;
+}
+.head{
+    text-align: center;
+    background-color: pink;
+}
+.p1{
+    text-align: center;
+    font-style: italic;
+}
+.p2{
+    text-align: center;
+    background-color: yellow;
+}
+.btn-1{
+    float: right;
+}
+.gr0{
+    float: right;
+    text-align: right;
+}
+.gr1{
+    float: right;
+    text-align: right;
+}
+.proc{
+    color: white;
+}
+.btn-1{
+    
+    background-color: purple;
+}
+.btn-0{
+    color: white;
+    background-color: purple;
+}
+/* screen 2*/
+.rem-1{
+    float: right;
+}

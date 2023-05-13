@@ -1,0 +1,85 @@
+<html>
+<head>
+<title>More Event Attribute</title>
+<style>
+    body{
+        background-color:indianred;
+    }
+</style>
+<script>
+ function myFunction(event) {
+    var x = event.key;
+        if (x == "F10") restore()
+        else if (x == "F8") save()
+        else if (x == "F9") clear()
+        }
+ function save() {
+        document.data.temp.value = document.data.txt.value;
+        document.data.temp1.value = document.data.txt1.value;
+    }
+function restore() {
+        document.data.txt.value = document.data.temp.value
+        document.data.txt1.value = document.data.temp1.value
+    }
+ function chgcolor(){
+        document.getElementById('txt').style.color = "white";
+        document.getElementById('txt').style.background="blue";
+    }
+function chgcolor1(){   
+        document.getElementById('txt1').style.background="cyan";
+        document.getElementById('txt1').style.color = "white";
+    }
+ function dispMessage(mode){
+        if(mode==1)
+        document.getElementById('demo').innerHTML = "Please enter any value";
+        else
+        document.getElementById('demo').innerHTML = "Press F8 to save, F10 to restore, or F9 to clear"
+    }
+
+function dispMessage1(mode){
+        if(mode==1){
+        document.getElementById('demo').innerHTML = "Please enter another string here";
+        document.getElementById('txt1').style.color = "white";
+        document.getElementById('txt1').style.background="blue";
+        }
+        else{
+        document.getElementById('demo').innerHTML = "Press F8 to save, F10 to restore, or F9 to clear"
+        document.getElementById('txt1').style.color = "black";
+        document.getElementById('txt1').style.background="white";
+    }
+    }
+ function returnColor(){
+        document.getElementById('txt').style.color = "black";
+        document.getElementById('txt').style.background="white";
+       
+    }
+function returnColor1(){
+        document.getElementById('txt1').style.color = "black";
+        document.getElementById('txt1').style.background="white";
+       
+    }
+ function clear() {
+        document.data.temp.value = "";
+        document.data.txt.value = "";
+        document.data.temp1.value = "";
+        document.data.txt1.value = "";
+        
+    }
+</script>
+<body onkeydown="myFunction(event)">
+    <h3>Implementing More Event Attributes</h3>
+    <p>( OnKeyDown, OnBlur, OnFocus, OnMouseOver, OnMouseOut)</p>
+    <form name = data>
+        Enter a value <input type="text" id = txt onfocus = chgcolor() onblur = returnColor()
+        onMouseOver = dispMessage(1) onMouseOut = dispMessage(2) value = 12345>
+        Field use to save the inputted value <input type="text" id = "temp" readonly>
+        <br><br>
+        
+        Enter another string here  <input type="text" id = txt1 onfocus = chgcolor1() onblur = returnColor()
+        onMouseOver = dispMessage1(1) onMouseOut = dispMessage1(2) value = ABCDE>
+        Field use to save the inputted value <input type="text" id = "temp1" readonly>
+    <br>
+    <p id = demo>Press F8 to save, F10 to restore, or F9 to clear</p>
+    </form>
+    </body>
+</html>

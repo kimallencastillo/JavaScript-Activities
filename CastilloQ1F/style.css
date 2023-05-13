@@ -1,0 +1,18 @@
+.frame-1{
+    margin-top: 58px;
+    height: 400px;
+}
+body{
+    background-color: tan;
+}
+.nav-1{
+    
+    text-decoration: none;
+    color: white;
+}
+.nav-bg{
+    background-color: darkred;
+    height: 25px;
+    text-align: center;
+    
+}

@@ -1,0 +1,112 @@
+.bg{
+    background-color: blue;
+}
+
+/*.head-1 h2{
+    float: 33.3%;
+    text-align: right;
+    padding-left: 5px;
+    padding-right: 55px;
+}*/
+h2{
+    text-align: right;
+    color: white;
+}
+.t1{
+    font-family:"Bauhaus 93",Verdana, Helvetica, sans-serif;
+    font-size: 33px;
+}
+.t2{
+    font-style: italic;
+}
+.tb-1 {
+    margin-top:150px;
+    margin-left:20px;
+    width: 60%;
+    height: 30%;
+    border-collapse: collapse;
+    
+}
+.tb-1 td , tr, th{
+    border: 2px black solid ;
+}
+.list{
+    font-family: Aharoni;
+    background-color: yellow;
+    height: 30px;
+    font-size: 23px;
+}
+.list-1 {
+    text-align: center;
+    color: white;
+    background-color: brown;
+    font-family: Comic Sans MS;
+}
+.line-1{
+    background-color: lightpink;
+}
+.line-2{
+    background-color: lightblue;
+}
+.btn-1{
+    margin-left: 20px;
+    background-color: maroon;
+    width: 200px;
+    height: 24px;
+    color: white;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+/*ContactUs*/
+.title1{
+    background-color: yellow;
+        
+}
+.tb-2{
+    margin-top:50px;
+    margin-left:120px;
+    width: 700px;
+    height: 30%;    
+}
+.c1{
+    background-color: yellow;
+    height: 30px;
+    font-size: 24px;
+    font-family: Aharoni;
+}
+.line-3{
+    text-align: right;
+    width: 400px;
+    padding: 8px;
+
+}
+
+.box-1{
+    width: 250px;
+    text-align: center;
+    background-color: blue;
+    color: yellow;
+    font-style: italic;
+}
+.colNum{
+    text-align: center;
+}
+.btn-2{
+    margin-left: 120px;
+    background-color: maroon;
+    width: 90px;
+    height: 27px;
+    color: white;
+}
+.btn-3{
+    margin-left: 510px;
+    background-color: maroon;
+    width: 90px;
+    height: 27px;
+    color: white;
+}
+.bg-2{
+    background-color:lightsalmon ;
+}

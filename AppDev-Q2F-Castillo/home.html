@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>SM Online</title>
+<style>
+	input {
+		width:150px;
+		background-color:blue;
+		color:white;
+	}
+	p {
+		font-family: tahoma;
+		font-size:18px;
+		font-weight: bold;
+	}
+	iframe {
+		position:absolute;
+		top:50px;
+		left:150px;
+	}
+</style>
+</head>
+<body>
+	<table>
+		<tr><td rowspan = 3 width = 35%><p>SM Appliance Store</p><img src = sm.png height = 100px weight = 100px>
+		   <td valign = top><input type = button value =  "Home"
+				   onclick = window.open("home.html")>
+		   <td valign = top><input type = button value =  "Update Inventory"
+		           onclick = window.open("update.html","myframe")>
+		   <td valign = top><input type = button value =  "Update Inventory 2"
+		           onclick = window.open("update2.html","myframe")>
+		   <td valign = top><input type = button value =  "Display Inventory" 
+		       onclick = window.open("items.html","myframe")>
+	</table>
+	
+	<iframe name = myframe src = info.html width = 80% align = right height = 700px></iframe>
+</body>
+</html>
+
+
+
+	
+	
+	

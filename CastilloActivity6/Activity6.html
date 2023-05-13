@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>GradeCalc</title>
+    <script language = javascript src = Process.js></script>
+    <script language = javascript src = CalcPct.js></script>
+    <script language = javascript src = CalcAve.js></script>
+  </head>
+  <body>
+      <table>
+          <form name="Grade">
+              <tr><th align="center">Grade Processor</th></tr>
+              <tr>
+                  <td>Student No.</td>
+                  <td><input type="text" name="stdNum"></td>
+              </tr>
+              <tr><td><br></td></tr>
+              <tr>
+                <td>Student Name</td>
+                <td><input type="text" name="stdName"></td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr>
+                <td>Prelim Grade</td>
+                <td><input type="number" name="pre"></td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr>
+                <td>Midterm Grade</td>
+                <td><input type="number" name="mid"></td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr>
+                <td>Final Grade</td>
+                <td><input type="number" name="final"></td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr>
+                <td>Computation Mode</td>
+                <td><input type="radio" value="A" name="pt">Average
+                <input type="radio" value="P" name="pt">Percentage
+            </td>   
+            </tr>
+            <tr><td><br><br><br></td>
+            </tr>
+            <td colspan="2"><input type="button" value="Calculate" onclick="calcGr()"></td>
+            <td><input type="reset" value="Clear"></td>
+          </form>
+      </table>
+  
+  </body>
+</html>

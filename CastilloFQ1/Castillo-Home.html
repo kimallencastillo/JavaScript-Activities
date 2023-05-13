@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>BPI Online Banking</title>
+    <script src="transc.js"></script>
+  </head>
+  <style>
+    
+      .in{
+          border: 1px solid black;
+      }
+  </style>
+  <body onsubmit="return false" onkeydown="myFunction(event)">
+    <img hspace = 20 valign = top align = left  src ="logo.jpg" width =  150 height = 110> </h2>
+    <h2 class="t2">BPI Master Card Inc.</h2>
+
+    <form name="transcProc">
+        <table align="center" width=80% style="border: 1px solid black;">
+            <tr>
+                <td style="font-weight: bold; size: 26;">Bank Transaction</td>
+            </tr>
+            <tr>
+                <td>Acct No.</td>
+                <td>Name</td>
+                <td>Balance</td>
+                <td>Transaction</td>
+                <td>Amount</td>
+                <td>New Balance</td>
+            </tr>
+
+            <tr>
+                <td class="in">
+                <select name="es" onblur="load()">
+                <option value="">----Select----
+                <option value="A1">A-1000
+                <option value="A2">A-1001
+                <option value="A3">A-1002   
+                <option value="A4">A-1003
+                </option> </td>
+                <td class="in"><input type="text" name="cosName" readonly></td>
+                <td class="in"><input type="text" name="balance" readonly></td>
+                <td class="in"><input type="text" name="transc"></td>
+                <td class="in"><input type="text" name="amount" onblur="transProc()"></td>
+                <td class="in"><input type="text" name="newBalance" readonly></td>
+            </tr>
+            <tr>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="font-weight: bold; size: 23;">Summary</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Cash on Bank (Beginning)</td>
+                <td><input type="text" name="CashBankBeg"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total No. of  Withdrawals</td>
+                <td><input type="text" name="totalW"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Amount</td>
+                <td><input type="text" name="amnt1"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Total No. of  Deposits</td>
+                <td><input type="text" name="totalDep"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Amount</td>
+                <td><input type="text" name="amnt2"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>Cash on Bank (Current)</td>
+                <td><input type="text" name="cashBankCur"></td>
+            </tr>
+            
+        </table>
+        <table align="center" style="margin-left: 225px; width: 80%;" >
+            <tr>
+                <td><button name="btn-sum" onclick="summary()">Update Summary</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <br>
+                </td>
+            </tr>
+         
+              
+           
+        </table>
+        <p id = demo style="text-align: center;">Press F10 to clear Summary, or F9 to clear outfields</p>
+    </form>
+  
+  </body>
+</html>

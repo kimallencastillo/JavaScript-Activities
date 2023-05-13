@@ -1,0 +1,30 @@
+
+function calcGr(){
+    var pre = Number(document.Grade.pre.value);
+    var mid = Number(document.Grade.mid.value);
+    var final = Number(document.Grade.final.value);
+    var stdNum = document.Grade.stdNum.value;
+    var stdName = document.Grade.stdName.value;
+    var opt = document.Grade.pt.value;
+    var overall, rem ="";
+
+    switch(opt){
+        case "A" :  overall= ave(pre,mid,final); break;
+        case "P" :  overall = per(pre,mid,final);break;
+    }
+    if(overall < 74) rem = "Failed";
+    else if(overall >= 75) rem ="Passed";
+    
+   
+
+    document.write("<br><b><u> Student Grades </b></u><br>")
+    document.write("<br> Student No.:   " + stdNum);
+    document.write("<br> Student Name:  " + stdName);
+    document.write("<br> Prelim Grade:  " + pre);
+    document.write("<br> Midterm Grade: " + mid);
+    document.write("<br> Final Grade:   " + final);
+    document.write("<br> Overall Grade: " + overall);
+    document.write("<br> Remarks: " + rem);
+    
+
+}

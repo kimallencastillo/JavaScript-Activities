@@ -1,0 +1,20 @@
+<html>
+<head>
+<script type = "text/javascript">
+function calcSum() {
+var n1 = Number(document.myForm.n1.value);
+var n2 = Number(document.myForm.n2.value);
+sum = n1 + n2
+document.myForm.n3.value = sum
+}
+</script>
+</head>
+<body>
+<form name = myForm>
+N1 : <input type = text value = 0 name = n1> <br>
+N2 : <input type = text value = 0 name = n2> <br>
+N3 : <input type = text value = 0 name = n3> <br>
+<input type = "button" onclick = calcSum() value = “Compute">
+</form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>SM Online</title>
+</head>
+<style>
+    input {
+		width:80px;
+		text-align:center;
+	}
+	#idesc {
+	    width:200px;
+		text-align:left;
+		font-style:italic;
+	}
+</style>	
+<script>
+	function load() {
+	   var listCodes = [100,101,102,103,104]
+	   var listDesc = ["Samsung DVD","Samsung Washing Machine","Huawei Mobile Phone",
+				   "HP Printer with Scanner","Sanyo Electric Fan"]
+	   var listPrices = [4500,5500,15000,3500,850]
+	   
+	   var listQtyOH = [4,5,5,5,5]
+	   var code = document.updateFrm.code.value
+	   var ptr;
+	   for (ptr = 0; ptr < 5; ptr++) {
+	       if (code == listCodes[ptr])
+				break;
+	   }
+	   if ( ptr < 5) {
+			document.updateFrm.iDesc.value = listDesc[ptr]
+			document.updateFrm.qtyOH.value = listQtyOH[ptr]
+	   }
+	   else 
+			alert("Invalid item code !")
+	}
+	function checkType() {
+		var ttype = document.updateFrm.ttype.value
+		if (ttype != 'R' && ttype != 'S') 
+			alert("Invalid transaction type")
+	}
+	function checkQty() {
+		var qty = Number(document.updateFrm.qty.value)
+		if (qty <= 0 ) 
+			alert("Quantity must be greater than 0")
+		if (isNaN(qty))
+			alert("Quantity entered is not a number")
+		
+	}
+	function compute() {
+		var qty = Number(document.updateFrm.qty.value)
+		var ttype = document.updateFrm.ttype.value
+		var qtyOH = Number(document.updateFrm.qtyOH.value)
+		if (ttype == 'R')
+			qtyOH += qty
+		else {
+			if (qtyOH < qty)  {
+				alert("Insufficient stock")
+				return
+			}
+			else {
+				qtyOH -= qty
+			}
+		}
+		document.updateFrm.uQtyOH.value = qtyOH
+	}
+</script>	
+<body>
+    <br>
+	<br>
+	<form name = updateFrm> 
+    <table width = 60% align = center border = 1 cellspacing = 2>
+		<tr><th colspan = 5>Update Inventory
+	</table>
+	<table width = 60% align = center border = 0 cellspacing = 4>
+		<tr>
+			<th>Item Code
+			<th>Item Description
+			<th>
+			<th>Current Qty On-Hand
+		<tr><td colspan = 4><hr>	
+		<tr><th><input type = text name = code>
+			<th><input id = iDesc type = text name = idesc readonly>
+			<th>
+			<th><input type = text name = qtyOH readonly>
+		<tr><td colspan = 4><hr>	
+		<tr><th><input type = button value = "Load Item" onclick = load()>
+			<td align = right colspan = 2>Transaction Type [R/S]
+			<th><input type = text name = ttype onblur = checkType()>
+		<tr><th><input type = button value = "Compute" onclick = compute()>
+			<td align = right colspan = 2>Quantity
+			<th><input type = text name = qty onblur = checkQty()>
+		<tr><td>
+		    <td align = right colspan = 2>Updated Qty On-Hand
+			<th><input type = text name = uQtyOH readonly>
+	</table>
+	</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+body{
+    background-image: url(img/bg.jpg);
+}
+h4{
+    font-family:  Baufra;
+    padding: 1px 35px;
+}
+h2{
+    padding: 40px 35px 0px;
+}
+ul{
+    list-style-type: circle;
+    padding: 5px 35px;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+   color:navy;
+}
+li{
+    padding: 5px 4px;
+    font-size: 20px;
+    
+} 
+table{
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+table, td ,th{
+    background-color: white;
+  border: 1px solid black;
+}
+th,td {
+  border-color:#103978;
+}
+td{
+    text-align: center;
+}

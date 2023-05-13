@@ -1,0 +1,21 @@
+H1 { text-align: center;
+ font-size: large;
+ Color: Maroon;
+ Border: solid;
+ Font-family: arial, verdana, tahoma
+ }
+H2 { font-size: x-large;
+ Color: rgb(20%, 50%, 30%);
+ Border: inset;
+ Font-family: ‘Century Gothic’ ;
+ Font-weigth: Bold;
+ text-align: right
+ }
+ H3 { 
+    font-size: 3em;
+    Color: rgb(20%, 50%, 30%);
+    Border: outset;
+    font-family: 'Times New Roman';
+    Font-weight: Bold;
+    Font-style: italic;
+    }

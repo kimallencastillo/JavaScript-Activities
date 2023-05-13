@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SPI Online</title>
+  </head>
+  
+  <style>
+      .tb-1{
+          border: 1px solid black;
+      }
+     
+  </style>
+  <script>
+      function loadInfo(){
+            var optIdNo = document.spiCalc.iDNo.value;
+            var empN , dept;
+            var currSl , currVl;
+
+            switch(optIdNo){
+                case 'E100': 
+                    empN = "France, Jesus"
+                    dept = "ITS" 
+                    currSl = 10
+                    currVl = 15
+                    break;
+                case 'E101': 
+                    empN = "Balboa, Russel"
+                    dept = "HRD" 
+                    currSl = 9
+                    currVl = 12
+                    break;
+                case 'E102': 
+                    empN = "Guillero, Rodel"
+                    dept = "Sales" 
+                    currSl = 15
+                    currVl = 12
+                    break;
+                case 'E103': 
+                    empN = "France, Jesus"
+                    dept = "ITS" 
+                    currSl = 10
+                    currVl = 15
+                    break;
+                case 'E104': 
+                    empN = "France, Jesus"
+                    dept = "ITS" 
+                    currSl = 10
+                    currVl = 15
+                    break;
+                case 'E105': 
+                    empN = "France, Jesus"
+                    dept = "ITS" 
+                    currSl = 10
+                    currVl = 15
+                    break;
+                default : alert("Invalid ID No.");
+            }
+
+          document.spiCalc.empName.value = empN
+          document.spiCalc.depart.value = dept
+          document.spiCalc.curSl.value = currSl
+          document.spiCalc.curVl.value = currVl
+      }
+      function typeOfLeave(){
+        var opttLeave = document.spiCalc.typeLeave.value
+        var descLv 
+        if(opttLeave == 'S' || opttLeave == 's')
+            descLv = "Sick Leave"
+        else if(opttLeave == 'V' || opttLeave == 'v')
+            descLv = "Vacation Leave"
+        else if (opttLeave == "") alert("No Value in Type of Leave inputted");
+        else alert("Wrong Type of Leave value inputted");
+        
+        document.spiCalc.descLeave.value = descLv
+      }
+      function proc(){
+          var noDays = Number(document.spiCalc.noDaysFiled.value)
+          var opttLeave = document.spiCalc.typeLeave.value
+          var remainingSl = document.spiCalc.curSl.value
+          var remainingVl = document.spiCalc.curVl.value
+          var remainingSum;
+          if(noDays > 10 || noDays < 1 ){
+            alert("Numbers are only 1 to 10");
+            }
+            else{
+                if(opttLeave == 'S' || opttLeave == 's'){
+                    remainingSum = remainingSl - noDays;
+                    document.spiCalc.remainVl.value = "";
+                    document.spiCalc.remainSl.value = remainingSum;           
+                }else if(opttLeave == 'V' || opttLeave == 'v'){
+                    remainingSum = remainingVl - noDays;
+                    document.spiCalc.remainSl.value = ""; 
+                    document.spiCalc.remainVl.value = remainingSum;
+                }else if(opttLeave == "") alert("No Type of Leave Value Inputted ")
+                else alert("Invalid Type of Leave value inputted");
+
+            }
+      }
+      
+
+
+</script>
+  <body onsubmit="return false">
+      <br><br><br>
+      <form name="spiCalc">
+          <table width=50% class="tb-1" align="center">
+              <tr>
+                  <td colspan="7" style="text-align: center; font-size: 25px;">Process Employee SL and VL</td>
+              </tr>
+              <tr>
+                  <td>ID No.</td>
+                  <td>Employee Name.</td>
+                  <td>Department</td>
+                  <td>Current SL</td>
+                  <td>Current VL</td>
+              </tr>
+              <tr>
+                  <td><input type="text" name="iDNo" size="5" onblur="loadInfo()"></td>
+                  <td><input type="text" name="empName" size="15" readonly></td>      
+                  <td><input type="text" name="depart" size="15" readonly></td>
+                  <td><input type="text" name="curSl" size="15" readonly></td>
+                  <td><input type="text" name="curVl" size="15" readonly></td>
+              </tr>
+              <tr>
+                  <td><br><br></td>
+              </tr>
+              <tr>
+                  
+                  <td colspan="2" style="text-align: right;">Enter Type of Leave [ S/V ]</td>
+                  <td style="width: 50px;"><input type="text" name="typeLeave" size="11" onchange="typeOfLeave()"></td>
+                  <td colspan="2"><input type="text" name="descLeave" size="36" value="Description of Leave" style="text-align: center;" readonly></td>
+              </tr>
+              <tr>
+                  
+                  <td colspan="2" style="text-align: right;">Enter No. of Days Filed</td>
+                  <td><input type="text" name="noDaysFiled" size="11"></td>
+                  <td>Remaining SL</td>
+                  <td><input type="text" name="remainSl"  size="6"></td>
+              </tr>
+              <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td>Remaining VL</td>
+                  <td><input type="text" name="remainVl" size="6"></td>
+              </tr>
+              <tr>
+                  <td><button class="btn-1 btn" onclick="proc()">Process</button></td>
+              </tr>
+          </table>
+      </form>
+
+  
+  </body>
+</html>
